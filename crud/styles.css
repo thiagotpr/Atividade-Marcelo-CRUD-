@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.dark-theme {
+    background-color: #111; 
+    color: #fff; 
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+h1{
+    color: rgb(238, 113, 55);
+}
+
+.movie-card {
+    width: 300px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin: 50px;
+    float: left;
+    padding-top: 30px;
+}
+
+.movie-details{
+    padding-left: 100px;
+}
+
+.movie-card-container {
+    max-width: 10000px; /* Defina a largura máxima que desejar */
+    margin: 0 auto; /* Centraliza o contêiner na página */
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cartões de filmes quebrem para a próxima linha */
+    justify-content: center; /* Centraliza horizontalmente os cartões de filmes */
+}
+
+.critica{
+    padding-left: 120px;
+    display: flex;
+    float: left;
+    justify-content: space-evenly;
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-content: center; 
+}
+
+button{
+    background-color: #6e6d6d;
+}
+
+.movie-container {
+    display: flex;
+    justify-content: center;
+}
+
+.movie-card-clickable {
+    width: 130px; 
+    height: 130px;
+}
+
+.p{
+    text-align: center;
+}
+
+.right-align {
+    text-align: left;
+    margin-left: 20px;
+    padding-right: 100px;
+}
+
+.movie-card:hover {
+    transform: scale(1.1);
+}
+
+img {
+    max-width: 100%;
+}
+
+.chart-container{
+    width: 300px;
+    height: 150px;
+}
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Avaliação - Vidas ao Vento</title>
+</head>
+<body class="dark-theme">
+    <header class="dark-theme">
+        <button id="back-button">Voltar para a Página Inicial</button>
+        <h1>Avaliação - Vidas ao Vento</h1>
+    </header>
+    <main class="dark-theme">
+        <div class="movie-details">
+            <div class="movie-container">
+                <img src="https://br.web.img2.acsta.net/pictures/14/02/21/16/51/373214.jpg" alt="Vidas ao Vento" height="200px">
+                <div class="right-align">
+                    <h2>Vidas ao Vento</h2>
+                    <p>Dirigido por Hayao Miyazaki</p>
+                    <p class="right-align">Sinopse: "Vidas ao Vento" conta a história da vida de Jiro Horikoshi, um talentoso engenheiro aeronáutico que vive
+                         no Japão nas décadas de 1920 e 1930. Jiro tem o sonho de construir aviões e, apesar de enfrentar desafios e dificuldades, 
+                         ele se torna um dos principais projetistas de aeronaves do Japão. O filme segue sua jornada desde os primeiros dias de aviação até a 
+                         Segunda Guerra Mundial, 
+                        abordando seu trabalho, suas aspirações e sua busca pelo amor. O filme é uma reflexão sobre a engenhosidade humana, o poder da imaginação e a busca incansável de nossos sonhos, mesmo em tempos de adversidade. "Vidas ao Vento" é uma obra-prima que toca o coração dos espectadores e oferece uma experiência cinematográfica excepcional.</p>
+                </div>
+            </div>
+        </div>
+        <div class="critica">
+        <div class="review-form">
+            <h2>Escreva sua crítica:</h2>
+            <textarea id="review" rows="4" cols="50" style="background-color: rgb(76, 105, 105)";></textarea>
+            <button id="submit">Enviar Crítica</button>
+            <div class="chart-container">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+        <div class="reviews">
+            <h2>Críticas:</h2>
+            <ul id="reviews"></ul>
+        </div>
+    </div>
+    </main>
+    <script src="script.js"></script>
+
+    <script>
+      
+        var ctx = document.getElementById('myChart').getContext('2d');
+      
+       
+        var data = {
+          labels: ['1✩', '1.5✩', '2✩', '2.5✩', '3✩', '3.5✩', '4✩', '4.5✩', '5✩'],
+          datasets: [
+            {
+              label: 'Avaliação Geral',
+              data: [10, 20, 15, 30, 25, 20, 40, 30, 45], 
+              backgroundColor: 'rgba(75, 192, 192, 0.2)', 
+              borderColor: 'rgba(75, 192, 192, 1)', 
+              borderWidth: 1, 
+            },
+          ],
+        };
+      
+       
+        var options = {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        };
+      
+        
+        var myChart = new Chart(ctx, {
+          type: 'bar', 
+          data: data, 
+          options: options, 
+        });
+      </script>
+</body>
+</html>
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Avaliação - Perfect Blue</title>
+</head>
+<body class="dark-theme">
+    <header class="dark-theme">
+        <button id="back-button">Voltar para a Página Inicial</button>
+        <h1>Avaliação - Perfect Blue</h1>
+    </header>
+    <main class="dark-theme">
+        <div class="movie-details">
+            <div class="movie-container">
+                <img src="https://m.media-amazon.com/images/M/MV5BN2RkMjQ3ZjItNWNlMC00ZTZlLTg3OTQtMzJjYjMwOTQ1ODg4XkEyXkFqcGdeQXVyMDc2NTEzMw@@._V1_.jpg" alt="Perfect Blue" height="200px">
+                <div class="right-align">
+                    <h2>Perfect Blue</h2>
+                    <p>Dirigido por Satoshi Kon</p>
+                    <p class="right-align">Sinopse: "Perfect Blue" é um thriller psicológico de animação dirigido por Satoshi Kon, lançado em 1997. O filme conta a história de Mima Kirigoe, uma jovem cantora pop que decide deixar sua carreira musical para seguir seu sonho de se tornar atriz. No entanto, essa mudança de carreira não é tão suave quanto ela imaginava.
+
+                        Conforme Mima começa a trabalhar como atriz, estranhos eventos começam a acontecer. Ela se torna o alvo de um stalker obsessivo que não consegue aceitar sua transição de ídolo pop para atriz séria. Além disso, Mima começa a perder a noção de realidade, à medida que sua vida profissional e pessoal se misturam de maneiras perturbadoras.</p>
+                </div>
+            </div>
+        </div>
+        <div class="critica">
+        <div class="review-form">
+            <h2>Escreva sua crítica:</h2>
+            <textarea id="review" rows="4" cols="50" style="background-color: rgb(76, 105, 105)";></textarea>
+            <button id="submit">Enviar Crítica</button>
+            <div class="chart-container">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+        <div class="reviews">
+            <h2>Críticas:</h2>
+            <ul id="reviews"></ul>
+        </div>
+    </div>
+    </main>
+    <script src="script.js"></script>
+
+    <script>
+      
+        var ctx = document.getElementById('myChart').getContext('2d');
+      
+       
+        var data = {
+          labels: ['1✩', '1.5✩', '2✩', '2.5✩', '3✩', '3.5✩', '4✩', '4.5✩', '5✩'],
+          datasets: [
+            {
+              label: 'Avaliação Geral',
+              data: [10, 20, 15, 30, 25, 20, 40, 30, 45], 
+              backgroundColor: 'rgba(75, 192, 192, 0.2)', 
+              borderColor: 'rgba(75, 192, 192, 1)', 
+              borderWidth: 1, 
+            },
+          ],
+        };
+      
+       
+        var options = {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        };
+      
+        
+        var myChart = new Chart(ctx, {
+          type: 'bar', 
+          data: data, 
+          options: options, 
+        });
+      </script>
+      </script>
+</body>
+</html>
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Avaliação - Clube da Luta</title>
+</head>
+<body class="dark-theme">
+    <header class="dark-theme">
+        <button id="back-button">Voltar para a Página Inicial</button>
+        <h1>Avaliação - Clube da Luta</h1>
+    </header>
+    <main class="dark-theme">
+        <div class="movie-details">
+            <div class="movie-container">
+                <img src="https://wp.ufpel.edu.br/empauta/files/2015/01/Clube-Da-Luta-Tx210.jpg" alt="Clube da Luta" height="200px">
+                <div class="right-align">
+                    <h2>Clube da Luta</h2>
+                    <p>Dirigido por David Fincher</p>
+                    <p class="right-align">Sinopse: "Clube da Luta" é um filme de 1999 dirigido por David Fincher, baseado no romance de Chuck Palahniuk. O filme é uma intrigante exploração dos desafios da sociedade moderna e da busca por identidade em um mundo consumista.
+                        A história segue um homem sem nome, interpretado por Edward Norton, que sofre de insônia e sente-se aprisionado por sua vida mundana. 
+                        Ele encontra alívio em grupos de apoio para pessoas com várias doenças, onde encontra Marla Singer (interpretada por Helena Bonham Carter), 
+                        uma mulher igualmente desajustada. No entanto, sua vida muda drasticamente quando ele conhece Tyler Durden (interpretado por Brad Pitt),
+                        um carismático vendedor de sabão que o envolve em uma série de atividades subversivas.</p>
+                </div>
+            </div>
+        </div>
+        <div class="critica">
+        <div class="review-form">
+            <h2>Escreva sua crítica:</h2>
+            <textarea id="review" rows="4" cols="50" style="background-color: rgb(76, 105, 105)";></textarea>
+            <button id="submit">Enviar Crítica</button>
+            <div class="chart-container">
+            <canvas id="myChart"></canvas>
+        </div>
+        </div>
+        <div class="reviews">
+            <h2>Críticas:</h2>
+            <ul id="reviews"></ul>
+
+        </div>
+    </div>
+    </main>
+    <script src="script.js"></script>
+
+    <script>
+      
+        var ctx = document.getElementById('myChart').getContext('2d');
+      
+       
+        var data = {
+          labels: ['1✩', '1.5✩', '2✩', '2.5✩', '3✩', '3.5✩', '4✩', '4.5✩', '5✩'],
+          datasets: [
+            {
+              label: 'Avaliação Geral',
+              data: [10, 20, 15, 30, 25, 20, 40, 30, 45], 
+              backgroundColor: 'rgba(75, 192, 192, 0.2)', 
+              borderColor: 'rgba(75, 192, 192, 1)', 
+              borderWidth: 1, 
+            },
+          ],
+        };
+      
+       
+        var options = {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        };
+      
+        
+        var myChart = new Chart(ctx, {
+          type: 'bar', 
+          data: data, 
+          options: options, 
+        });
+      </script>
+      
+      
+      
+
+</body>
+</html>
+

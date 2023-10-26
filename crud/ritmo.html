@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Avaliação - Clube da Luta</title>
+</head>
+<body class="dark-theme">
+    <header class="dark-theme">
+        <button id="back-button">Voltar para a Página Inicial</button>
+        <h1>Avaliação - Em Ritmo de Fuga</h1>
+    </header>
+    <main class="dark-theme">
+        <div class="movie-details">
+            <div class="movie-container">
+                <img src="https://m.media-amazon.com/images/S/pv-target-images/b4fd94a886256776863146cb0ad7bb702a238ab69a442deae77549705e8cc44e.jpg" alt="Em Ritmo de Fuga" height="200px">
+                <div class="right-align">
+                    <h2>Em Ritmo de Fuga</h2>
+                    <p>Dirigido por Edgar Wright</p>
+                    <p class="right-align">Sinopse: "Em Ritmo de Fuga" (ou "Baby Driver") é um emocionante filme de ação dirigido por Edgar Wright. A história gira em torno de Baby,
+                         um jovem e talentoso motorista de fuga, interpretado por Ansel Elgort. Baby é um gênio ao volante e usa a música como sua trilha sonora pessoal,
+                          o que o torna um motorista excepcionalmente habilidoso. No entanto, ele se envolve em um mundo perigoso de crime organizado, trabalhando para um impiedoso chefão do crime, Doc, interpretado por Kevin Spacey. Baby quer sair dessa vida criminosa e começar de novo, mas Doc o força a continuar realizando roubos para ele.</p>
+                </div>
+            </div>
+        </div>
+        <div class="critica">
+        <div class="review-form">
+            <h2>Escreva sua crítica:</h2>
+            <textarea id="review" rows="4" cols="50" style="background-color: rgb(76, 105, 105)";></textarea>
+            <button id="submit">Enviar Crítica</button>
+            <div class="chart-container">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+        <div class="reviews">
+            <h2>Críticas:</h2>
+            <ul id="reviews"></ul>
+        </div>
+    </div>
+    </main>
+    <script src="script.js"></script>
+    <script>
+      
+        var ctx = document.getElementById('myChart').getContext('2d');
+      
+       
+        var data = {
+          labels: ['1✩', '1.5✩', '2✩', '2.5✩', '3✩', '3.5✩', '4✩', '4.5✩', '5✩'],
+          datasets: [
+            {
+              label: 'Avaliação Geral',
+              data: [10, 20, 15, 30, 25, 20, 40, 30, 45], 
+              backgroundColor: 'rgba(75, 192, 192, 0.2)', 
+              borderColor: 'rgba(75, 192, 192, 1)', 
+              borderWidth: 1, 
+            },
+          ],
+        };
+      
+       
+        var options = {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        };
+      
+        
+        var myChart = new Chart(ctx, {
+          type: 'bar', 
+          data: data, 
+          options: options, 
+        });
+      </script>
+</body>
+</html>
